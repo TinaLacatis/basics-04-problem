@@ -7,22 +7,18 @@ const app = Vue.createApp({
     };
   },
   computed: {
-    classesVisibility() {
+    givenClasses() {
       return {
+        user1: this.givenInput === "user1",
+        user2: this.givenInput === "user2",
         visible: this.toggleAction,
         hidden: !this.toggleAction,
       };
     },
   },
   methods: {
-    givenInputClass(event) {
-      this.givenInput = event.target.value;
-    },
     btnActions() {
       this.toggleAction = !this.toggleAction;
-    },
-    givenInputBackground(event) {
-      this.givenBackground = event.target.value;
     },
   },
 });
